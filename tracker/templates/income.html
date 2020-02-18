@@ -1,0 +1,23 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>Income Title</td>
+				<td>Income Description</td>
+				<td>Income Amount</td>
+				<td>Income Time</td>
+			</tr>
+			{% for income in all_incomes %}
+			<tr>
+				<td>{{income.title}}</td>
+				<td>{{income.description}}</td>
+				<td>{{income.amount}}</td>
+				<td>{{income.timestamp}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

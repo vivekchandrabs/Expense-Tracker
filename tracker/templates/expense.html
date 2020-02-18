@@ -1,0 +1,24 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>Expense Title</td>
+				<td>Expense Description</td>
+				<td>Expense Amount</td>
+				<td>Expense Time</td>
+			</tr>
+
+			{% for expense in all_expenses %}
+			<tr>
+				<td>{{expense.title}}</td>
+				<td>{{expense.description}}</td>
+				<td>{{expense.amount}}</td>
+				<td>{{expense.timestamp}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
