@@ -3,6 +3,23 @@
 		
 	</head>
 	<body>
+		<form action="/create_expense/" method="POST">
+			{% csrf_token %}
+			<label>Title</label>
+			<input type="text" name="expense_title" placeholder="Title">
+
+			<br><br>
+			<label>Amount</label>
+			<input type="number" name="expense_amount" placeholder="Amount">
+
+			<br><br>
+			<label>Description</label>
+			<textarea name="expense_description" placeholder="Description"></textarea>
+
+			<br><br>
+			<button type="submit">Create Expense</button>
+		</form>
+
 		<table>
 			<tr>
 				<td>Expense Title</td>
@@ -10,13 +27,14 @@
 				<td>Expense Amount</td>
 				<td>Expense Time</td>
 			</tr>
-
 			{% for expense in all_expenses %}
 			<tr>
 				<td>{{expense.title}}</td>
 				<td>{{expense.description}}</td>
 				<td>{{expense.amount}}</td>
 				<td>{{expense.timestamp}}</td>
+				<td><a href="/delete_expense/{{expense.id}}/">Delete</a></td>
+				<td><a href="/expense/{{expense.id}}/">Edit</a></td>
 			</tr>
 			{% endfor %}
 		</table>

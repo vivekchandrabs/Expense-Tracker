@@ -8,8 +8,6 @@ class Expense(models.Model):
 	timestamp = models.DateTimeField()
 	description = models.TextField()
 
-	def __str__(self):
-		return self.title
 
 
 class Income(models.Model):

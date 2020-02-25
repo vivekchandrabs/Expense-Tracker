@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from tracker.views import get_all_expense, get_all_income
+from tracker.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("expense/", get_all_expense),
     path("income/", get_all_income),
+    path("create_expense/", create_expense),
+    path("delete_expense/<int:expense_id>/", delete_expense),
+    path("expense/<int:expense_id>/", get_expense),
+    path("expense_edit/<int:expense_id>/", expense_edit),
 ]
